@@ -1,8 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://bhxltvjfd1r0n"]
+[gd_scene load_steps=25 format=3 uid="uid://bhxltvjfd1r0n"]
 
 [ext_resource type="Script" path="res://scripts/goblin.gd" id="1_ap7wh"]
 [ext_resource type="Texture2D" uid="uid://bjdwdddmhp4nb" path="res://assets/sprites/Attacks.png" id="1_pwr41"]
 [ext_resource type="Texture2D" uid="uid://c3puao8d6jiy" path="res://assets/sprites/Movement.png" id="2_wf0hq"]
+[ext_resource type="AudioStream" uid="uid://csjvnscwphy5h" path="res://assets/sounds/laugh.wav" id="4_8fv67"]
+[ext_resource type="AudioStream" uid="uid://brxb02nmptqce" path="res://assets/sounds/RPReplay_Final1729796948.wav" id="5_kbvrp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gqhhv"]
 atlas = ExtResource("1_pwr41")
@@ -159,6 +161,12 @@ shape = SubResource("RectangleShape2D_oaaa0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
 position = Vector2(-0.5, -9)
 shape = SubResource("RectangleShape2D_guvv5")
+
+[node name="groan_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8fv67")
+
+[node name="attack_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kbvrp")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_DetectionArea_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_DetectionArea_body_exited"]

@@ -8,6 +8,9 @@ const MAX_HEALTH = 5.0  # Full health with 5 hearts
 @onready var attack_area_1 = $AttackArea_1
 @onready var attack_area_2 = $AttackArea_2
 @onready var respawn_point = get_parent().get_node("RespawnPoint")
+@onready var walk_audio = $walk_audio
+@onready var jump_audio = $jump_audio
+@onready var attack_audio = $attack_audio
 
 var health = MAX_HEALTH
 var is_attacking = false
@@ -41,7 +44,8 @@ func _physics_process(delta):
 		# Handle jump
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-
+			jump_audio.play()
+			walk_audio.stop()
 		# Get input direction
 		var direction = Input.get_axis("move_left", "move_right")
 
@@ -59,11 +63,14 @@ func _physics_process(delta):
 		if is_on_floor():
 			if direction == 0:
 				animated_sprite.play("idle")
+				walk_audio.stop()
 			else:
 				animated_sprite.play("walk")
+				if !walk_audio.playing:
+					walk_audio.play()
 		else:
 			animated_sprite.play("jump")
-
+			walk_audio.stop()
 		# Move character
 		if direction != 0:
 			velocity.x = direction * SPEED
@@ -91,6 +98,7 @@ func die():
 func start_attack(attack_type):
 	is_attacking = true
 	attack_timer = ATTACK_DURATION
+	attack_audio.play()
 	if attack_type == 1:
 		$AttackArea_1/CollisionShape2D.disabled = false
 		animated_sprite.play("attack_1")

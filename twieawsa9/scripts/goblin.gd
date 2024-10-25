@@ -13,6 +13,8 @@ var is_flipping = false
 @onready var detection_area = $DetectionArea
 @onready var attack_area = $AttackArea
 @onready var hit_area = $HitArea
+@onready var groan_audio = $groan_audio
+@onready var attack_audio = $attack_audio
 
 var is_attacking = false
 var attack_timer = 0.0
@@ -26,9 +28,12 @@ func _physics_process(delta):
 		velocity.x = SPEED * direction
 		animated_sprite.flip_h = direction < 0
 		attack_area.scale.x = direction
-
+		if !groan_audio.playing:
+			groan_audio.play()
 		if is_on_wall() and not is_flipping:
 			reverse_direction()
+	else:
+		groan_audio.stop()
 
 	move_and_slide()
 
@@ -72,6 +77,7 @@ func start_attack():
 		attack_timer = ATTACK_DURATION
 		$AttackArea/CollisionShape2D.call_deferred("set_disabled", false)
 		animated_sprite.play("attack")
+		attack_audio.play()
 
 		var player_position = get_parent().get_node("Player").global_position
 		if player_position.x < global_position.x:
@@ -89,9 +95,9 @@ func take_damage(amount):
 	if health <= 0:
 		die()
 
-# Function to handle the rat's death
 func die():
-	print("Goblin defeated!")
+	print("Zombie defeated!")
+	groan_audio.stop()
 	queue_free()
 
 # End the attack and reset to walking behavior
@@ -99,3 +105,4 @@ func end_attack():
 	is_attacking = false
 	$AttackArea/CollisionShape2D.disabled = true
 	animated_sprite.play("walking")
+	groan_audio.play()

@@ -1,8 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://odrc1lblogj0"]
+[gd_scene load_steps=25 format=3 uid="uid://odrc1lblogj0"]
 
 [ext_resource type="Texture2D" uid="uid://c3puao8d6jiy" path="res://assets/sprites/Movement.png" id="1_e058q"]
 [ext_resource type="Script" path="res://scripts/zombie.gd" id="1_urghh"]
 [ext_resource type="Texture2D" uid="uid://bjdwdddmhp4nb" path="res://assets/sprites/Attacks.png" id="2_sficc"]
+[ext_resource type="AudioStream" uid="uid://byi4lw5grrkum" path="res://assets/sounds/groan.wav" id="4_jnc0i"]
+[ext_resource type="AudioStream" uid="uid://cppx6h4il5dfv" path="res://assets/sounds/audiomass-output(4).wav" id="5_6i551"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke4i3"]
 atlas = ExtResource("2_sficc")
@@ -158,6 +160,12 @@ shape = SubResource("RectangleShape2D_43hpj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
 position = Vector2(1.5, -14.5)
 shape = SubResource("RectangleShape2D_ge1v1")
+
+[node name="groan_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jnc0i")
+
+[node name="attack_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_6i551")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_DetectionArea_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_DetectionArea_body_exited"]

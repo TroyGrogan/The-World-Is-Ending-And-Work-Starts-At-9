@@ -1,8 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://72bn3faojojp"]
+[gd_scene load_steps=38 format=3 uid="uid://72bn3faojojp"]
 
 [ext_resource type="Texture2D" uid="uid://c3puao8d6jiy" path="res://assets/sprites/Movement.png" id="1_ht2fc"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_o7x2k"]
 [ext_resource type="Texture2D" uid="uid://bjdwdddmhp4nb" path="res://assets/sprites/Attacks.png" id="2_ao273"]
+[ext_resource type="AudioStream" uid="uid://cdfrid828r0jn" path="res://assets/sounds/walking.wav" id="4_d81vy"]
+[ext_resource type="AudioStream" uid="uid://dg5aj5kytfnp1" path="res://assets/sounds/jump.wav" id="5_c78q5"]
+[ext_resource type="AudioStream" uid="uid://dfym84d74iuro" path="res://assets/sounds/attack.wav" id="6_tmrdk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lukiw"]
 atlas = ExtResource("2_ao273")
@@ -256,3 +259,12 @@ disabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea_2"]
 position = Vector2(15, -16)
 shape = SubResource("RectangleShape2D_sun8u")
+
+[node name="walk_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_d81vy")
+
+[node name="jump_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_c78q5")
+
+[node name="attack_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_tmrdk")

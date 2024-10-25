@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://da8fo71e6dxlv"]
+
+[ext_resource type="Texture2D" uid="uid://dpeunifab74uu" path="res://assets/sprites/worldtiles.png" id="1_ox763"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewm2f"]
+size = Vector2(48, 16)
+
+[node name="platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ox763")
+region_enabled = true
+region_rect = Rect2(32, 80, 48, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ewm2f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -38)
+texture = ExtResource("1_ox763")
+region_enabled = true
+region_rect = Rect2(69, 3, 5, 61)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(0, -61)
+texture = ExtResource("1_ox763")
+region_enabled = true
+region_rect = Rect2(69, 3, 5, 61)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(0, -159)
+texture = ExtResource("1_ox763")
+region_enabled = true
+region_rect = Rect2(69, 3, 5, 61)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(0, -60)
+texture = ExtResource("1_ox763")
+region_enabled = true
+region_rect = Rect2(69, 3, 5, 61)
