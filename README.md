@@ -8,3 +8,5 @@
 - The Daytime Level Music Samples the song "Takin' It to the Streets" By The Doobie Brothers and James Taylor
 
 # Game Concept Created by Chloe Brown
+
+# Programmers Rene Olea & Tyrrell Wilkins
