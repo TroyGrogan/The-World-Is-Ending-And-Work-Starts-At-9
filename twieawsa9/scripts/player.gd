@@ -2,18 +2,21 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
+const MAX_HEALTH = 5.0  # Full health with 5 hearts
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var attack_area_1 = $AttackArea_1  # Reference to AttackArea_1 node
-@onready var attack_area_2 = $AttackArea_2  # Reference to AttackArea_2 node
+@onready var attack_area_1 = $AttackArea_1
+@onready var attack_area_2 = $AttackArea_2
+@onready var respawn_point = get_parent().get_node("RespawnPoint")
 
+var health = MAX_HEALTH
 var is_attacking = false
 var attack_timer = 0.0
 const ATTACK_DURATION = 0.6
 
 func _ready():
-	$AttackArea_1/CollisionShape2D.disabled = true  # Disable attack collision by default
-	$AttackArea_2/CollisionShape2D.disabled = true  # Disable attack collision by default
+	$AttackArea_1/CollisionShape2D.disabled = true
+	$AttackArea_2/CollisionShape2D.disabled = true
 
 func _physics_process(delta):
 	# Handle attack timing
@@ -43,14 +46,14 @@ func _physics_process(delta):
 		var direction = Input.get_axis("move_left", "move_right")
 
 		# Flip sprite and adjust attack area positions based on direction
-		if direction > 0:  # Moving right
+		if direction > 0:
 			animated_sprite.flip_h = false
-			attack_area_1.scale.x = 1  # Reset the attack area scale to normal
+			attack_area_1.scale.x = 1
 			attack_area_2.scale.x = 1
-		elif direction < 0:  # Moving left
+		elif direction < 0:
 			animated_sprite.flip_h = true
-			attack_area_1.scale.x = -1  # Flip the attack area horizontally
-			attack_area_2.scale.x = -1  # Flip the attack area horizontally
+			attack_area_1.scale.x = -1
+			attack_area_2.scale.x = -1
 
 		# Play movement animations
 		if is_on_floor():
@@ -67,25 +70,37 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:
-		# During attack, prevent movement
 		velocity.x = 0
 
 	move_and_slide()
 
-# Start the attack (called when the player initiates an attack)
+# Function to reduce health when hit by an enemy
+func take_damage(amount):
+	health -= amount
+	if health <= 0:
+		die()
+
+# Function to handle player's death and respawn
+func die():
+	print("Player has been defeated!")
+	health = MAX_HEALTH
+	global_position = respawn_point.global_position
+	animated_sprite.play("idle")
+
+# Start the attack
 func start_attack(attack_type):
 	is_attacking = true
 	attack_timer = ATTACK_DURATION
 	if attack_type == 1:
-		$AttackArea_1/CollisionShape2D.disabled = false  # Enable the attack area for attack 1
+		$AttackArea_1/CollisionShape2D.disabled = false
 		animated_sprite.play("attack_1")
 	elif attack_type == 2:
-		$AttackArea_2/CollisionShape2D.disabled = false  # Enable the attack area for attack 2
+		$AttackArea_2/CollisionShape2D.disabled = false
 		animated_sprite.play("attack_2")
 
-# End the attack (called when the attack timer runs out)
+# End the attack
 func end_attack():
 	is_attacking = false
-	$AttackArea_1/CollisionShape2D.disabled = true  # Disable the attack area 1
-	$AttackArea_2/CollisionShape2D.disabled = true  # Disable the attack area 2
-	animated_sprite.play("idle")  # Return to idle animation
+	$AttackArea_1/CollisionShape2D.disabled = true
+	$AttackArea_2/CollisionShape2D.disabled = true
+	animated_sprite.play("idle")
