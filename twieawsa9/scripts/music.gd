@@ -14,15 +14,15 @@ func toggle_pause():
 	if paused:
 		print("Pausing the game")
 		pause_menu.show()
-		Engine.time_scale = 0  # Set time_scale to 0 to pause gameplay
+		Engine.time_scale = 0
 	else:
 		print("Resuming the game")
 		pause_menu.hide()
-		Engine.time_scale = 1  # Restore normal game speed # Unpause the game
+		Engine.time_scale = 1
 
 # Function to play a specific track and stop others
 func play_music(music_player):
-	# Stop all music players before playing the new one
+
 	home_music.stop()
 	day_music.stop()
 	music_player.play()
@@ -56,5 +56,5 @@ func transition_to_next_level():
 
 # Load the next level
 func load_next_level():
-	print("Loading next level...")  # Debugging print to verify the function is called
+	print("Loading next level...") 
 	get_tree().change_scene_to_file("res://scenes/game2.tscn")
