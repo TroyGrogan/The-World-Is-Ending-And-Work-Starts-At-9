@@ -1,13 +1,15 @@
-[gd_scene load_steps=24 format=4 uid="uid://cjdavcwy6m3yd"]
+[gd_scene load_steps=28 format=4 uid="uid://cjdavcwy6m3yd"]
 
+[ext_resource type="Script" path="res://scripts/music.gd" id="1_37a7s"]
 [ext_resource type="PackedScene" uid="uid://72bn3faojojp" path="res://scenes/player.tscn" id="1_ab5du"]
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_o1pp0"]
 [ext_resource type="PackedScene" uid="uid://co4of5qo66d76" path="res://scenes/rat.tscn" id="2_cclre"]
 [ext_resource type="Texture2D" uid="uid://dpeunifab74uu" path="res://assets/sprites/worldtiles.png" id="2_h83x1"]
 [ext_resource type="Texture2D" uid="uid://dsg3maolpdu87" path="res://assets/sprites/crane.png" id="3_m3by6"]
 [ext_resource type="PackedScene" uid="uid://cptq4w3itngdh" path="res://scenes/pause_menu.tscn" id="4_nxj8d"]
 [ext_resource type="PackedScene" uid="uid://da8fo71e6dxlv" path="res://scenes/platform.tscn" id="6_3bpk3"]
 [ext_resource type="PackedScene" uid="uid://bd2hokeex53li" path="res://scenes/killzone.tscn" id="8_lbt3q"]
+[ext_resource type="AudioStream" uid="uid://8bjyh61v5kbt" path="res://assets/music/HOME_SONG.mp3" id="9_73drx"]
+[ext_resource type="AudioStream" uid="uid://bcuil0talvye6" path="res://assets/music/DAYTIME_LEVEL_MUSIC.mp3" id="10_wc5nt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bdwuj"]
 texture = ExtResource("2_h83x1")
@@ -1733,8 +1735,23 @@ _data = {
 "move": SubResource("Animation_1ad80")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw8yv"]
+size = Vector2(222, 46.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7h4wo"]
+size = Vector2(1847, 554)
+
 [node name="Game" type="Node2D"]
-script = ExtResource("1_o1pp0")
+script = ExtResource("1_37a7s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="healthbar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = -267.0
+offset_top = -82.0
+offset_right = -195.0
+offset_bottom = -55.0
+max_value = 5.0
 
 [node name="TileMap" type="Node" parent="."]
 
@@ -1821,4 +1838,27 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="HomeMusic" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeMusic"]
+position = Vector2(-144, -24.25)
+shape = SubResource("RectangleShape2D_rw8yv")
+
+[node name="home_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_73drx")
+parameters/looping = false
+
+[node name="DayMusic" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DayMusic"]
+position = Vector2(890.5, 38)
+shape = SubResource("RectangleShape2D_7h4wo")
+
+[node name="day_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_wc5nt")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="HomeMusic" to="." method="_on_HomeArea_body_entered"]
+[connection signal="body_exited" from="HomeMusic" to="." method="_on_HomeArea_body_exited"]
+[connection signal="body_entered" from="DayMusic" to="." method="_on_DayArea_body_entered"]
+[connection signal="body_exited" from="DayMusic" to="." method="_on_DayArea_body_exited"]
