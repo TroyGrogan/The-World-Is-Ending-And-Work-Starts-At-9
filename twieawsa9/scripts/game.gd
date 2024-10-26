@@ -1,31 +1,28 @@
 extends Node2D
 
-@onready var pause_menu = $Player/Camera2D/pause_menu
+@onready var night_music = $night_music
 
-var paused = false
 
-func _process(delta):
-	if Input.is_action_just_pressed("pause_menu"):
-		pauseMenu()
+func play_music(music_player):
+	# Stop all music players before playing the new one
+	night_music.stop()
+	music_player.play()
 
-func pauseMenu():
-	if paused:
-		pause_menu.hide()
-		Engine.time_scale = 1
-	else:
-		pause_menu.show()
-		Engine.time_scale = 0
+func _on_NightArea_body_entered(body):
+	if body.name == "Player":
+		play_music(night_music)
 
-	paused = !paused
-
+# Detect when the player enters the area to transition to the main menu
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		transition_to_next_level()
+		transition_to_main_menu()
 
-func transition_to_next_level():
+# Start the transition to the main menu
+func transition_to_main_menu():
 	# Defer the scene change until after the physics step
-	call_deferred("load_next_level")
+	call_deferred("load_main_menu")
 
-func load_next_level():
-	# Change to the next level
-	get_tree().change_scene_to_file("res://scenes/game2.tscn")
+# Load the main menu
+func load_main_menu():
+	print("Loading main menu...")  # Debugging print to verify the function is called
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
