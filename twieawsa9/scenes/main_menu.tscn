@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8p2dt1cvlpk3"]
 
 [ext_resource type="Script" path="res://scenes/main_menuMusic.gd" id="1_axor4"]
-[ext_resource type="AudioStream" uid="uid://doym2ptcmr4bb" path="res://assets/music/MAIN_MENU_MUSIC.mp3" id="2_ie3do"]
+[ext_resource type="AudioStream" uid="uid://bjp2euiq68qq3" path="res://assets/music/MAIN_MENU_MUSIC.mp3" id="2_ie3do"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sdo7x"]
 
@@ -89,11 +89,14 @@ offset_bottom = -182.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 45
-text = "The World Is Ending and Work Starts at 9"
+text = "The World Is Ending And Work Starts At 9"
 
 [node name="background_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ie3do")
+volume_db = -1.0
 autoplay = true
+attenuation = 1.42369e-05
+panning_strength = 0.0
 parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_game_button_pressed"]

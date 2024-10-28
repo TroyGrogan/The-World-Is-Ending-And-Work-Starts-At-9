@@ -17,9 +17,17 @@ var is_attacking = false
 var attack_timer = 0.0
 const ATTACK_DURATION = 0.6
 
+# New Code:
+# Time in seconds before player can be killed again
+var respawn_cooldown = 2.0
+
 func _ready():
 	$AttackArea_1/CollisionShape2D.disabled = true
 	$AttackArea_2/CollisionShape2D.disabled = true
+	# New Code:	
+	# Add the player to the "Player" group 
+	# for easy detection by the killzone
+	add_to_group("Player")  
 
 func _physics_process(delta):
 	# Handle attack timing
@@ -91,6 +99,15 @@ func take_damage(amount):
 func die():
 	print("Player has been defeated!")
 	health = MAX_HEALTH
+	# New Code:
+	# Disable collision with layer 1 
+	# (assuming this is where the kill zone is)
+	set_collision_mask_value(1, false)
+	#yield(get_tree().create_timer(respawn_cooldown), "timeout")
+	# ^^ Parse Error: "yield" was removed in Godot 4. Use "await" instead.
+	await(get_tree().create_timer(respawn_cooldown))
+	set_collision_mask_value(1, true) # Re-enable collision with layer 1 after cooldown
+	# Old Code:	
 	global_position = respawn_point.global_position
 	animated_sprite.play("idle")
 

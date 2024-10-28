@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/MAIN_MENU_MUSIC.mp3-7a9c08efeea2987c51c86b77c
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
