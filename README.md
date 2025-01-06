@@ -11,11 +11,11 @@
 # Music Created By Troy Grogan
 - The Menu Music Samples the song "Impeach the President" By The Honey Drippers
 
-[ ![The Honey Drippers - Impeach The President](https://github.com/user-attachments/assets/f21cd1fd-1df4-42d7-86dd-4b3fd53db294) ](https://open.spotify.com/track/06IfNMdoVrWAizU8boYYCt?si=9621c3642cac4426)
+[ ![The Honey Drippers - Impeach The President](https://github.com/user-attachments/assets/f21cd1fd-1df4-42d7-86dd-4b3fd53db294) ](https://www.youtube.com/watch?v=wVycUX1y0XE&ab_channel=TheHoneyDrippers-Topic)
 
 - The Day Time Level Music Samples the song "Takin' It to the Streets" By The Doobie Brothers and James Taylor
 
-[ ![The Doobie Brothers – Takin' It To The Streets](https://github.com/user-attachments/assets/8f1f3b89-a9cd-46e1-9e61-03924cea2aa1) ](https://open.spotify.com/track/1WDgdCoNSN0fosaTaLGXKU?si=60211dbb86164dee)
+[ ![The Doobie Brothers – Takin' It To The Streets](https://github.com/user-attachments/assets/8f1f3b89-a9cd-46e1-9e61-03924cea2aa1) ](https://www.youtube.com/watch?v=5o_umKOTXIs&ab_channel=TheDoobieBrothers-Topic)
 
 - The Night Time Level Music was self made
 
