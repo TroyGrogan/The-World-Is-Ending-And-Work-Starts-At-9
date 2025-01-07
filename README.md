@@ -1,4 +1,4 @@
-# The-World-Is-Ending-And-Work-Starts-At-9
+# The World Is Ending And Work Starts At 9
 2D Game For CSCE 552 Fall 2024
 
 <img width="1440" alt="(1) 2D GAME MAIN MENU SCREENSHOT 2880x1800" src="https://github.com/user-attachments/assets/63ed05b9-2ea7-47cb-b7be-57173047e056" />
@@ -21,4 +21,4 @@
 
 # Game Concept Created by Chloe Brown
 
-# Programmers Rene Olea & Tyrrell Wilkins
+# Programmers: Rene Olea & Tyrrell Wilkins
