@@ -13,11 +13,21 @@
 
 [ ![The Honey Drippers - Impeach The President](https://github.com/user-attachments/assets/f21cd1fd-1df4-42d7-86dd-4b3fd53db294) ](https://www.youtube.com/watch?v=wVycUX1y0XE&ab_channel=TheHoneyDrippers-Topic)
 
+<video src="readme_audio/main_menu_music.mov" controls></video>
+
+- The Home Music was self made
+
+<video src="readme_audio/home_song.mov" controls></video>
+
 - The Day Time Level Music samples the song "Takin' It to the Streets" By The Doobie Brothers and James Taylor
 
 [ ![The Doobie Brothers – Takin' It To The Streets](https://github.com/user-attachments/assets/8f1f3b89-a9cd-46e1-9e61-03924cea2aa1) ](https://www.youtube.com/watch?v=5o_umKOTXIs&ab_channel=TheDoobieBrothers-Topic)
 
+<video src="readme_audio/daytime_level_music.mov" controls></video>
+
 - The Night Time Level Music was self made
+
+<video src="readme_audio/night_level_music.mov" controls></video>
 
 # Game Concept Created by Chloe Brown
 
