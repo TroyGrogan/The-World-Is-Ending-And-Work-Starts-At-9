@@ -11,23 +11,39 @@
 # Music Created By Troy Grogan
 - The Menu Music samples the song "Impeach the President" By The Honey Drippers
 
-[ ![The Honey Drippers - Impeach The President](https://github.com/user-attachments/assets/f21cd1fd-1df4-42d7-86dd-4b3fd53db294) ](https://www.youtube.com/watch?v=wVycUX1y0XE&ab_channel=TheHoneyDrippers-Topic)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=wVycUX1y0XE&ab_channel=TheHoneyDrippers-Topic">
+    <img src="https://github.com/user-attachments/assets/f21cd1fd-1df4-42d7-86dd-4b3fd53db294" alt="The Honey Drippers - Impeach The President">
+  </a>
+</div>
 
-<video src="https://github.com/user-attachments/assets/bc50421b-550d-44ff-8a88-99158da83eb7" controls></video>
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/bc50421b-550d-44ff-8a88-99158da83eb7" controls></video>
+</div>
 
 - The Home Music was self made
 
-<video src="https://github.com/user-attachments/assets/23ac9ff1-5e6f-4ee3-8c4c-daeeec1fd3ed" controls></video>
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/23ac9ff1-5e6f-4ee3-8c4c-daeeec1fd3ed" controls></video>
+</div>
 
 - The Day Time Level Music samples the song "Takin' It to the Streets" By The Doobie Brothers and James Taylor
 
-[ ![The Doobie Brothers – Takin' It To The Streets](https://github.com/user-attachments/assets/8f1f3b89-a9cd-46e1-9e61-03924cea2aa1) ](https://www.youtube.com/watch?v=5o_umKOTXIs&ab_channel=TheDoobieBrothers-Topic)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=5o_umKOTXIs&ab_channel=TheDoobieBrothers-Topic">
+    <img src="https://github.com/user-attachments/assets/8f1f3b89-a9cd-46e1-9e61-03924cea2aa1" alt="The Doobie Brothers – Takin' It To The Streets">
+  </a>
+</div>
 
-<video src="https://github.com/user-attachments/assets/7fe4b3d6-b198-4ac5-bfd7-3678404f59a7" controls></video>
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/7fe4b3d6-b198-4ac5-bfd7-3678404f59a7" controls></video>
+</div>
 
 - The Night Time Level Music was self made
 
-<video src="https://github.com/user-attachments/assets/6c574178-9657-441b-9393-262a1e2849cf" controls></video>
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/6c574178-9657-441b-9393-262a1e2849cf" controls></video>
+</div>
 
 # Game Concept Created by Chloe Brown
 
