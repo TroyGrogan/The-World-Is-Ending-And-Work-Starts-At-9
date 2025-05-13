@@ -18,13 +18,13 @@
 </div>
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/bc50421b-550d-44ff-8a88-99158da83eb7" controls></video>
+  <video src="https://github.com/user-attachments/assets/bc50421b-550d-44ff-8a88-99158da83eb7" controls preload="auto"></video>
 </div>
 
 - The Home Music was self made
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/23ac9ff1-5e6f-4ee3-8c4c-daeeec1fd3ed" controls></video>
+  <video src="https://github.com/user-attachments/assets/23ac9ff1-5e6f-4ee3-8c4c-daeeec1fd3ed" controls preload="auto"></video>
 </div>
 
 - The Day Time Level Music samples the song "Takin' It to the Streets" By The Doobie Brothers and James Taylor
@@ -36,13 +36,13 @@
 </div>
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/7fe4b3d6-b198-4ac5-bfd7-3678404f59a7" controls></video>
+  <video src="https://github.com/user-attachments/assets/7fe4b3d6-b198-4ac5-bfd7-3678404f59a7" controls preload="auto"></video>
 </div>
 
 - The Night Time Level Music was self made
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/6c574178-9657-441b-9393-262a1e2849cf" controls></video>
+  <video src="https://github.com/user-attachments/assets/6c574178-9657-441b-9393-262a1e2849cf" controls preload="auto"></video>
 </div>
 
 # Game Concept Created by Chloe Brown
