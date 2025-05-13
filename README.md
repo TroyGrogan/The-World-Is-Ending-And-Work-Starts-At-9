@@ -15,8 +15,9 @@
 # Music Created By Troy Grogan
 
 <div align="center">
-    <p><strong>📱 Mobile Users:</strong> If the first audio doesn't play, try tapping another player first, then return to your first choice.</p>
+    <p><strong>📱 Mobile Users: If the first audio doesn't play, try tapping another player first, then return to your first choice.</strong></p>
 </div>
+
 
 <div align="center">
     <p>
